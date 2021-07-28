@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageModule } from './about-page/about-page.module';
+import { AboutPageComponent } from './about-page/about-page/about-page.component';
+import { HomePageModule } from './home-page/home-page.module';
+import { HomePageComponent } from './home-page/home-page/home-page.component';
 import { MainLayoutModule } from './main-layout/main-layout.module';
 import { MainLayoutComponent } from './main-layout/main-layout/main-layout.component';
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), MainLayoutModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    MainLayoutModule,
+    HomePageModule,
+    AboutPageModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
