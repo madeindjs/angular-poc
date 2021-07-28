@@ -1,14 +1,12 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { UserCardComponent } from './components/user-card/user-card.component';
-import { UsersListComponent } from './components/users-list/users-list.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +15,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MainLayoutComponent,
     AboutPageComponent,
     NavBarComponent,
-    UsersListComponent,
-    UserCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, UsersModule],
   providers: [],
   bootstrap: [AppComponent],
 })
