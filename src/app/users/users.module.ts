@@ -3,10 +3,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { UsersPageIndexComponent } from './users-page-index/users-page-index.component';
 import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
-  declarations: [UsersListComponent, UserCardComponent],
+  declarations: [
+    UsersListComponent,
+    UserCardComponent,
+    UsersPageIndexComponent,
+  ],
   imports: [CommonModule, HttpClientModule, UsersRoutingModule],
   exports: [UsersListComponent],
 })
