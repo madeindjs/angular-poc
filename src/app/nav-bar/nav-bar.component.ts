@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { User } from '../users.service';
+import { map, tap } from 'rxjs/operators';
+import { AppState } from '../state.interface';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,11 +13,14 @@ import { User } from '../users.service';
 export class NavBarComponent implements OnInit {
   public usersCount: Observable<number>;
 
-  constructor(private readonly store: Store<{ users: User[] }>) {}
+  constructor(private readonly store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.usersCount = this.store
-      .select('users')
-      .pipe(map((users) => users.length));
+      .select((state) => state.users.users)
+      .pipe(
+        tap(console.log),
+        map((users) => users.length)
+      );
   }
 }

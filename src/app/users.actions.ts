@@ -6,3 +6,8 @@ export const setUsersAction = createAction(
   'setUsersAction',
   props<{ users: User[] }>()
 );
+
+export const removeUserAction = createAction(
+  'removeUserAction',
+  props<{ user: User }>()
+);
