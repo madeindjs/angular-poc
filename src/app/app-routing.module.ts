@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutPageModule } from './about-page/about-page.module';
-import { AboutPageComponent } from './about-page/about-page/about-page.component';
-import { HomePageModule } from './home-page/home-page.module';
-import { HomePageComponent } from './home-page/home-page/home-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    loadChildren: () =>
+      import('./home-page/home-page.module').then((m) => m.HomePageModule),
   },
   {
     path: 'users',
@@ -17,12 +14,13 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutPageComponent,
+    loadChildren: () =>
+      import('./about-page/about-page.module').then((m) => m.AboutPageModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HomePageModule, AboutPageModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
