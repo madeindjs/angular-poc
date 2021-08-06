@@ -1,0 +1,23 @@
+.error {
+  color: red;
+  text-decoration: wavy;
+  font-size: small;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 1rem;
+
+  label {
+    width: 100px;
+  }
+
+  input {
+    margin-right: 2rem;
+    width: 300px;
+  }
+}

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './login.service';
 import { LoginComponent } from './login/login.component';
 
@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     // StoreModule.forFeature('login', { login: loginReducer }),
   ],
   exports: [LoginComponent],

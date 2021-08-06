@@ -1,20 +1,51 @@
-import { Component } from '@angular/core';
-import { LoginService } from '../login.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService, LoginUser } from '../login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [LoginService],
 })
-export class LoginComponent {
-  public email = '';
-  public password = '';
-  public passwordMinLength = 4;
+export class LoginComponent implements OnInit {
+  public user: LoginUser = {
+    email: '',
+    password: '',
+  };
+  public form: FormGroup;
+  public readonly passwordMinLength = 4;
 
   constructor(private readonly loginService: LoginService) {}
 
+  get valid() {
+    return this.form.valid;
+  }
+
+  get emailField() {
+    return this.form.get('email');
+  }
+
+  get passwordField() {
+    return this.form.get('password');
+  }
+
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl(this.user.email, [
+        Validators.required,
+        Validators.email,
+      ]),
+      password: new FormControl(this.user.password, [
+        Validators.required,
+        Validators.minLength(this.passwordMinLength),
+      ]),
+    });
+  }
+
   login() {
-    this.loginService.login({ email: this.email, password: this.password });
+    this.loginService.login({
+      email: String(this.emailField.value),
+      password: String(this.passwordField.value),
+    });
   }
 }
