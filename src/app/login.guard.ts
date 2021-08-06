@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { AppState } from './state.interface';
 
 @Injectable({
@@ -21,6 +21,13 @@ export class LoginGuard implements CanActivate {
   ): Observable<boolean> {
     return this.store
       .select((state) => state.login.user)
-      .pipe(map((user) => Boolean(user)));
+      .pipe(
+        map((user) => Boolean(user)),
+        tap((authorized) => {
+          if (!authorized) {
+            alert('You do not have permission, please login before');
+          }
+        })
+      );
   }
 }

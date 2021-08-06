@@ -11,5 +11,9 @@ nav {
     li {
       font-size: 2rem;
     }
+
+    .unauthorized {
+      text-decoration: line-through;
+    }
   }
 }

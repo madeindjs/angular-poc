@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginService, LoginUser } from '../login.service';
+import { LoginService, LoginUser } from '../../login/login.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
   public user: LoginUser = {
     email: '',
     password: '',
