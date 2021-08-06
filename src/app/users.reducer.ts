@@ -1,7 +1,7 @@
 // src/app/users.reducer.ts
 import { createReducer, on } from '@ngrx/store';
 import { removeUserAction, setUsersAction } from './users.actions';
-import { User } from './users.service';
+import { User } from './users/users.service';
 
 export interface UsersState {
   users: User[];

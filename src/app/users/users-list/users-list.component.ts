@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/state.interface';
-import { User } from '../../users.service';
+import { User } from '../users.service';
 
 @Component({
   selector: 'app-users-list',

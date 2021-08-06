@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
-import { UsersService } from 'src/app/users.service';
+import { UsersService } from 'src/app/users/users.service';
 
 @Component({
   selector: 'app-users-page-index',

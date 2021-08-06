@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
@@ -14,7 +13,6 @@ import { usersReducer } from './users.reducer';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule,
     StoreModule.forRoot({ users: usersReducer, login: loginReducer }),
     LoginModule,
   ],

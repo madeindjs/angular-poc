@@ -9,8 +9,7 @@ export interface LoginUser {
 }
 
 @Injectable({
-  // providedIn: LoginModule,
-  providedIn: 'root',
+  providedIn: 'any',
 })
 export class LoginService {
   loggedUser = this.store.select((state) => state.login.user);

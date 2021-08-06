@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
-import { setUsersAction } from './users.actions';
+import { setUsersAction } from '../users.actions';
 
 export interface User {
   uuid: string;
@@ -14,7 +14,7 @@ export interface User {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'any',
 })
 export class UsersService {
   constructor(private readonly http: HttpClient, private store: Store) {}

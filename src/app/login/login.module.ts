@@ -3,10 +3,7 @@ import { NgModule } from '@angular/core';
 import { LoginService } from './login.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    // StoreModule.forFeature('login', { login: loginReducer }),
-  ],
+  imports: [CommonModule],
   providers: [LoginService],
 })
 export class LoginModule {}

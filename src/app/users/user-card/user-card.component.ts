@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeUserAction } from 'src/app/users.actions';
-import { User } from '../../users.service';
+import { User } from '../users.service';
 
 @Component({
   selector: 'app-user-card',
