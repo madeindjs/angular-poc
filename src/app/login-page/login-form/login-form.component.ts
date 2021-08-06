@@ -9,8 +9,8 @@ import { LoginService, LoginUser } from '../../login/login.service';
 })
 export class LoginFormComponent implements OnInit {
   public user: LoginUser = {
-    email: '',
-    password: '',
+    email: 'test@test.fr',
+    password: '123456',
   };
   public form: FormGroup;
   public readonly passwordMinLength = 4;

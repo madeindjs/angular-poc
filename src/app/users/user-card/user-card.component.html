@@ -1,12 +1,6 @@
 <section class="user-card" *ngIf="user !== undefined">
   <p>
-    <strong>{{ user.email }}</strong>
+    <strong>{{ user | userName }}</strong>
   </p>
-  <dl>
-    <dt>firstname</dt>
-    <dd>{{ user.firstname }}</dd>
-    <dt>lastname</dt>
-    <dd>{{ user.lastname }}</dd>
-  </dl>
   <button (click)="removeUser()">delete</button>
 </section>

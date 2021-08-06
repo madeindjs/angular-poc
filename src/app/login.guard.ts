@@ -25,7 +25,7 @@ export class LoginGuard implements CanActivate {
         map((user) => Boolean(user)),
         tap((authorized) => {
           if (!authorized) {
-            alert('You do not have permission, please login before');
+            console.error('You do not have permission, please login before');
           }
         })
       );
