@@ -6,5 +6,7 @@
       <a routerLink="/users">users ({{ usersCount | async }})</a>
     </li>
     <li><a routerLink="/about">about</a></li>
+    <li *ngIf="loggedUser | async">{{ loggedUser | async }}</li>
+    <li *ngIf="!(loggedUser | async)">unlogged</li>
   </ul>
 </nav>

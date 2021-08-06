@@ -1,0 +1,22 @@
+<div>
+  <label>email</label><br />
+  <input type="email" [(ngModel)]="email" required #emailField="ngModel" />
+  <p *ngIf="emailField.errors?.required">Email is required</p>
+</div>
+<div>
+  <label>password</label><br />
+  <input
+    type="password"
+    [(ngModel)]="password"
+    required
+    [minlength]="passwordMinLength"
+    #passwordField="ngModel"
+  />
+  <p *ngIf="passwordField.errors?.required">Password is required</p>
+  <p *ngIf="passwordField.errors?.minlength">
+    Password must be 4 char (rest {{ passwordMinLength - password.length }})
+  </p>
+</div>
+<div>
+  <button (click)="login()">login as {{ email }}</button>
+</div>
