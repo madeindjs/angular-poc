@@ -1,6 +1,13 @@
 # AngularPoc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+This is my personnal tests with Angular:
+
+- [ ] guard
+- [ ] modules
+- [ ] lazy loading
+- [ ] tests
+- [ ] interceptors
+- [ ] ngrx
 
 ## Development server
 
