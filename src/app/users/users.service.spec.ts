@@ -10,7 +10,7 @@ import { User, UsersService } from './users.service';
 describe('UsersService', () => {
   let service: UsersService;
   let httpTestingController: HttpTestingController;
-  let store: MockStore;
+  let store: MockStore<AppState>;
 
   const initialState: AppState = { login: undefined, users: { users: [] } };
 
@@ -32,7 +32,7 @@ describe('UsersService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return expected users', (done) => {
+  it('should return expected users', () => {
     const expectedUsers: User[] = [
       {
         email: 'toto@toto.fr',
@@ -43,15 +43,18 @@ describe('UsersService', () => {
       },
     ];
 
-    service.getUsers().subscribe((users) => {
-      expect(users).toEqual(expectedUsers);
-      done();
-    });
+    service
+      .getUsers()
+      .subscribe((users) => expect(users).toEqual(expectedUsers));
 
     const req = httpTestingController.expectOne(
       'https://fakerapi.it/api/v1/users'
     );
 
-    req.flush(expectedUsers);
+    req.flush({ data: expectedUsers });
+
+    // store
+    //   .select((state: AppState) => state.users.users)
+    //   .subscribe((users) => expect(users).toEqual(expectedUsers));
   });
 });
