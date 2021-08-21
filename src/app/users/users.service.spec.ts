@@ -3,18 +3,25 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { AppState } from '../state.interface';
 import { User, UsersService } from './users.service';
 
 describe('UsersService', () => {
   let service: UsersService;
   let httpTestingController: HttpTestingController;
+  let store: MockStore;
+
+  const initialState: AppState = { login: undefined, users: { users: [] } };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers: [provideMockStore({ initialState })],
     });
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(UsersService);
+    store = TestBed.inject(MockStore);
   });
 
   afterEach(() => {
@@ -37,7 +44,6 @@ describe('UsersService', () => {
     ];
 
     service.getUsers().subscribe((users) => {
-      console.log(users);
       expect(users).toEqual(expectedUsers);
       done();
     });

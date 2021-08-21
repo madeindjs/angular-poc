@@ -1,4 +1,4 @@
-# AngularPoc
+# Angular POC
 
 This is my personnal tests with Angular:
 

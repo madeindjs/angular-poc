@@ -1,5 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UsersPageIndexComponent } from './users-page-index.component';
 
 describe('UsersPageIndexComponent', () => {
@@ -8,9 +8,9 @@ describe('UsersPageIndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersPageIndexComponent ]
-    })
-    .compileComponents();
+      declarations: [UsersPageIndexComponent],
+      imports: [HttpClientModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
