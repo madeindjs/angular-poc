@@ -13,6 +13,10 @@ export class LoginCardComponent {
   @Input() loggedUser: LoginUser;
   constructor(private readonly store: Store<AppState>) {}
 
+  get email() {
+    return this.loggedUser?.email;
+  }
+
   disconnect() {
     this.store.dispatch(disconnectAction());
   }

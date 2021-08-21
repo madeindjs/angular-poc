@@ -7,7 +7,7 @@ describe('LoginCardComponent', () => {
   let component: LoginCardComponent;
   let fixture: ComponentFixture<LoginCardComponent>;
   const initialState: AppState = {
-    login: { user: undefined },
+    login: { user: { email: 'toto@toto.fr', password: 'test' } },
     users: { users: [] },
   };
 
