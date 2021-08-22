@@ -17,7 +17,7 @@ export class LoginService {
   constructor(private store: Store<AppState>) {}
 
   login(user: LoginUser) {
-    this.store.dispatch(loginAction({ user }));
+    return this.store.dispatch(loginAction({ user }));
   }
 
   disconnect() {

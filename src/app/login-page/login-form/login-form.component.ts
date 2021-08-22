@@ -44,7 +44,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login({
+    return this.loginService.login({
       email: String(this.emailField.value),
       password: String(this.passwordField.value),
     });
