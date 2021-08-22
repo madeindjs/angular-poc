@@ -1,5 +1,7 @@
 # Angular POC
 
+![Test status](https://github.com/madeindjs/angular-poc/actions/workflows/main.yml/badge.svg)
+
 This is my personnal tests with Angular:
 
 - [ ] guard
