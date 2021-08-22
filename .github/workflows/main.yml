@@ -1,3 +1,4 @@
+# .github/workflows/main.yml
 # Copy/pasted from https://angular.io/guide/testing#configure-project-for-github-actions
 name: CI Angular app through Github Actions
 on: push

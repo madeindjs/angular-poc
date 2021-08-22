@@ -1,15 +1,16 @@
-# Angular POC
-
 ![Test status](https://github.com/madeindjs/angular-poc/actions/workflows/main.yml/badge.svg)
+
+# Angular POC
 
 This is my personnal tests with Angular:
 
-- [ ] guard
-- [ ] modules
-- [ ] lazy loading
-- [ ] tests
-- [ ] interceptors
-- [ ] ngrx
+- [x] guard
+- [x] modules
+- [x] lazy loading
+- [x] tests
+- [x] Github Actions CI
+- [x] interceptors
+- [x] ngrx
 
 ## Development server
 
