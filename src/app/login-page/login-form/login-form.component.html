@@ -21,7 +21,7 @@
       {{ passwordMinLength - user.password.length }})
     </p>
   </div>
-  <div>
+  <div class="LoginForm-submit">
     <button (click)="login()" [disabled]="!valid">
       login as {{ user.email }}
     </button>

@@ -1,19 +1,53 @@
+$gutter: 0.5rem;
+
 nav {
-  border-bottom: 2px dashed black;
+  // box-shadow: 0px 5px lightgray;
 
-  ul {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  justify-content: space-around;
 
-    justify-content: space-around;
+  font-size: 1.2rem;
 
-    li {
-      font-size: 2rem;
-    }
+  a {
+    text-align: center;
+    text-decoration: none;
+    margin: $gutter;
+    background-color: lightgray;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0.2rem;
+    // width: 100;
+    flex-grow: 1;
+    color: black;
 
-    .unauthorized {
-      text-decoration: line-through;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    &:hover:not(.unauthorized) {
+      background-color: lightslategray;
     }
   }
+
+  @media (max-width: 600px) {
+    a {
+      width: 100%;
+    }
+  }
+
+  .active {
+    border-bottom: blue solid 1px;
+  }
+
+  .unauthorized {
+    color: darkgray;
+    cursor: not-allowed;
+  }
+}
+
+.NavBar-count {
+  color: gray;
 }
